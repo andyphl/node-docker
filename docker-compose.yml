@@ -11,6 +11,7 @@ services:
 
   node-devops-app:
     build: .
+    image: andyphl/node-devops-app
     environment:
       - PORT=3000
     depends_on:
