@@ -4,6 +4,13 @@ services:
     ports:
       - "80:80"
   node-devops-app:
+    deploy:
+      replicas: 6
+      restart_policy:
+        condition: any
+      update_config:
+        parallelism: 2
+        delay: 10s
     build:
       context: .
       args: 
@@ -14,6 +21,7 @@ services:
       - MONGO_PWD=${MONGO_PWD}
       - SESSION_SECRET=${SESSION_SECRET}
     command: npm run start
+
   mongo:
     image: mongo
     environment:
