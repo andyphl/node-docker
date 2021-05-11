@@ -56,7 +56,7 @@ app.use(session({
 }));
 
 app.get("/api/v1", (req, res, next) => {
-    res.send("<h1>Hello!</h1>");
+    res.send("<h1>Hello</h1>");
     console.log("This ran");
 });
 
@@ -66,5 +66,5 @@ app.use("/api/v1/users", userRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}...`);
+    console.log(`Server listening on port ${port}...🚀`);
 })
